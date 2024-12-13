@@ -42,8 +42,6 @@ jobs:
           key: ${{ secrets.LIGHTSAIL_SSH_PRIVATE_KEY }}
           port: ${{ secrets.LIGHTSAIL_PORT }}
           script: |
-            echo "Attempting SSH connection..."
-             ssh -v -i ${{ secrets.LIGHTSAIL_SSH_PRIVATE_KEY }} -p ${{ secrets.LIGHTSAIL_PORT }} ${{ secrets.LIGHTSAIL_USERNAME }}@${{ secrets.LIGHTSAIL_HOST }}
             sudo docker pull phuyalsandeep10/frontend:latest
             sudo docker stop frontend || true
             sudo docker rm frontend || true
