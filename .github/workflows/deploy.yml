@@ -3,7 +3,7 @@ name: Build, Push Docker Image and Deploy to EC2
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -46,4 +46,4 @@ jobs:
             sudo docker stop frontend || true
             sudo docker rm frontend || true
             sudo docker run -d --name frontend -p 3000:80 phuyalsandeep10/frontend:latest
-            echo "It is completed successfully"
+            echo "It is completed successfully finally"
