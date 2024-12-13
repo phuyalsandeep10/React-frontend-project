@@ -1,4 +1,4 @@
-name: Build, Push Docker Image and Deploy to EC2
+name: Build, Push Docker Image and Deploy to Lightsail
 
 on:
   push:
@@ -34,8 +34,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy code to LIGHTSAIL
-        uses: appleboy/ssh-action@master
+      - name: Deploy code to Lightsail
+        uses: appleboy/ssh-action@v0.1.0  # Specify a stable version
         with:
           host: ${{ secrets.LIGHTSAIL_HOST }}
           username: ${{ secrets.LIGHTSAIL_USERNAME }}
@@ -46,4 +46,4 @@ jobs:
             sudo docker stop frontend || true
             sudo docker rm frontend || true
             sudo docker run -d --name frontend -p 3000:80 phuyalsandeep10/frontend:latest
-            echo "It is completed successfully finally"
+            echo "Deployment completed successfully!"
