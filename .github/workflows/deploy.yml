@@ -34,7 +34,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy code to EC2
+      - name: Deploy code to LIGHTSAIL
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.LIGHTSAIL_HOST }}
