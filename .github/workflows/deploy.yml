@@ -39,7 +39,7 @@ jobs:
         with:
           host: ${{ secrets.LIGHTSAIL_HOST }}
           username: ${{ secrets.LIGHTSAIL_USERNAME }}
-          key: ${{ secrets.LIGHTSAIL_SSH_KEY }}
+          key: ${{ secrets.LIGHTSAIL_SSH_PRIVATE_KEY }}
           port: ${{ secrets.LIGHTSAIL_PORT }}
           script: |
             sudo docker pull phuyalsandeep10/frontend:latest
